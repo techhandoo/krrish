@@ -60,4 +60,3 @@ wheel==0.45.0
 wrapt==1.16.0
 pip>=24.3.1
 
---upgrade pip
