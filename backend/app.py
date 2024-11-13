@@ -4,7 +4,7 @@ from tensorflow.keras.models import load_model
 from sklearn.preprocessing import MinMaxScaler
 
 # Load the model and scaler
-model = load_model('air_quality_model.h5')
+model = load_model('model_training/air_quality_model.h5')
 scaler = np.load('scaler.npy', allow_pickle=True)
 
 app = Flask(__name__)
