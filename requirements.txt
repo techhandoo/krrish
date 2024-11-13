@@ -46,7 +46,7 @@ scikit-learn==1.1.2
 scipy==1.9.3
 setuptools==75.4.0
 six==1.16.0
-tensorboard==2.18.0
+tensorboard>=2.10, <2.11
 tensorboard-data-server==0.7.2
 tensorflow==2.10.0
 
