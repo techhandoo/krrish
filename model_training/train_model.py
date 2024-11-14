@@ -36,6 +36,9 @@ model = Sequential([
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 model.fit(X_train, y_train, epochs=50, batch_size=32, validation_data=(X_test, y_test), verbose=1)
 
-# Save the model and scaler
-model.save('air_quality_model.h5')
-np.save('scaler.npy', scaler.fit_transform(features))
+# Save the model without batch_shape issues
+model.save('air_quality_model.h5', include_optimizer=False)
+
+# Save the scaler
+import joblib
+joblib.dump(scaler, 'scaler.joblib')
