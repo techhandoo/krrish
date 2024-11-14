@@ -25,7 +25,7 @@ X_train, X_test, y_train, y_test = train_test_split(features_scaled, target, tes
 
 # Define CNN-LSTM model with kernel size 1 for Conv1D
 model = Sequential([
-    Conv1D(64, 1, activation='relu', input_shape=(X_train.shape[1], X_train.shape[2])),
+    Conv1D(64, 1, activation='relu', input_shape=(X_train.shape[1], X_train.shape[2])),  # No need for batch_shape
     MaxPooling1D(1),
     LSTM(50, activation='relu'),
     Dropout(0.3),
@@ -36,7 +36,7 @@ model = Sequential([
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 model.fit(X_train, y_train, epochs=50, batch_size=32, validation_data=(X_test, y_test), verbose=1)
 
-# Save the model without batch_shape issues
+# Save the model without batch_shape issues (include_optimizer=False)
 model.save('air_quality_model.h5', include_optimizer=False)
 
 # Save the scaler
