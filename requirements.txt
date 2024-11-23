@@ -49,7 +49,7 @@ six==1.16.0
 tensorboard>=2.10, <2.11
 tensorboard-data-server>=0.6.0, <0.7.0
 tensorflow-cpu==2.10.0
-
+tensorflow
 termcolor==2.5.0
 threadpoolctl==3.5.0
 typing_extensions==4.12.2
