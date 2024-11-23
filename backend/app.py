@@ -2,6 +2,11 @@ from flask import Flask, request, jsonify
 import numpy as np
 from tensorflow.keras.models import load_model
 from sklearn.preprocessing import MinMaxScaler
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+logging.info("Starting the app")
+
 
 # Load the model and scaler
 model = load_model('model_training/air_quality_model.h5')
